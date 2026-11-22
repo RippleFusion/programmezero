@@ -41,7 +41,7 @@ nav.top{position:-webkit-sticky;position:sticky;top:0;z-index:10;background:#000
 .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
 nav.top ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
 nav.top a{color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
-nav.top a:hover,nav.top a:focus-visible{color:var(--accent)}
+nav.top a:focus-visible,nav.top a[aria-current]{color:var(--accent)}@media(hover:hover){nav.top a:hover{color:var(--accent)}}
 
 section.blk{max-width:1100px;margin:0 auto;padding:6rem 1.5rem}
 section.blk h2{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;font-weight:600}
@@ -169,6 +169,14 @@ if(v==='home'){if(v!==cur&&(!h||h==='top')){window.scrollTo(0,0)}if(h&&h!=='top'
 else{var st=document.querySelector('header.strip');window.scrollTo(0,st?st.offsetHeight:0)}
 cur=v}
 addEventListener('hashchange',route);route();})();
+</script>
+<script>
+(function(){var links=[].slice.call(document.querySelectorAll('nav.top a')),nav=document.querySelector('nav.top');
+function set(h){links.forEach(function(a){if(a.getAttribute('href')===h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+function upd(){var h=location.hash;if(h==='#contact'){set('#contact');return}if(h==='#privacy'){set('');return}
+var cur='#top',nb=nav.getBoundingClientRect().bottom;
+['about','trailers','episodes'].forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=nb+40)cur='#'+i});set(cur)}
+addEventListener('scroll',upd,{passive:true});addEventListener('hashchange',function(){setTimeout(upd,60)});addEventListener('resize',upd);upd();})();
 </script>
 </body>
 </html>
