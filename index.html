@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programme Zero</title>
+<meta name="description" content="Programme Zero. Coming soon.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="images/favicon.png">
+<link rel="canonical" href="https://programmezero.com/">
+<meta property="og:title" content="Programme Zero">
+<meta property="og:description" content="Programme Zero. Coming soon.">
+<meta property="og:image" content="https://programmezero.com/images/share.jpg">
+<meta property="og:url" content="https://programmezero.com/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#000;--ink:#fff;--mute:#9a9a9a;--accent:#b05c3e;--bar:#1f1f1f;--bar2:#2d2d2d}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
+main{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:4rem 1.5rem;position:relative;text-align:center}
+.logo{width:min(760px,86vw);height:auto;position:relative;z-index:1}
+.tag{color:var(--mute);letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;position:relative;z-index:1}
+.cta{position:relative;z-index:1;display:inline-block;padding:.9rem 1.8rem;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;letter-spacing:.04em}
+.cta:hover,.cta:focus-visible{background:#c46c4b;outline:2px solid #fff;outline-offset:3px}
+.bars{position:absolute;top:0;bottom:0;width:22vw;min-width:90px;display:flex;flex-direction:column;justify-content:space-around;padding:2rem 0;pointer-events:none}
+.bars.l{left:0;align-items:flex-start}.bars.r{right:0;align-items:flex-end}
+.bars i{display:block;height:2rem;border-radius:999px;background:var(--bar);animation:drift 9s ease-in-out infinite alternate}
+.bars.l i{border-top-left-radius:0;border-bottom-left-radius:0}.bars.r i{border-top-right-radius:0;border-bottom-right-radius:0}
+.bars i:nth-child(3n){background:var(--bar2)}
+.bars i.o{background:var(--accent);position:relative}
+.bars i.o::after{content:"";position:absolute;top:50%;width:.9rem;height:.9rem;border:2px solid #fff;transform:translateY(-50%) rotate(45deg)}
+.bars.l i.o::after{right:-1.8rem}.bars.r i.o::after{left:-1.8rem}
+@keyframes drift{to{transform:translateX(var(--d,12px))}}
+.bars.r i{--d:-12px}
+.bars i:nth-child(odd){animation-delay:-3s}.bars i:nth-child(3n){animation-delay:-6s}
+@media (prefers-reduced-motion:reduce){.bars i{animation:none}}
+footer{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;color:#555;font-size:.75rem}
+@media(max-width:600px){.bars{opacity:.5}.bars i{height:1.3rem}}
+</style>
+</head>
+<body>
+<main>
+  <div class="bars l" aria-hidden="true"><i style="width:90%"></i><i style="width:100%"></i><i style="width:60%"></i><i style="width:75%"></i><i style="width:40%"></i><i style="width:80%"></i><i class="o" style="width:85%;margin-left:15%"></i><i style="width:55%"></i><i style="width:95%"></i><i style="width:70%"></i></div>
+  <div class="bars r" aria-hidden="true"><i style="width:95%"></i><i style="width:85%"></i><i class="o" style="width:90%"></i><i style="width:100%"></i><i style="width:70%"></i><i style="width:100%"></i><i style="width:80%"></i><i style="width:75%"></i><i style="width:90%"></i><i style="width:85%"></i></div>
+  <img class="logo" src="images/logo.png" alt="Programme Zero" width="1030" height="155">
+  <p class="tag">Coming soon</p>
+  <a class="cta" href="mailto:hello@programmezero.com?subject=Programme%20Zero">Get in touch</a>
+  <footer>&copy; 2026 Programme Zero</footer>
+</main>
+</body>
+</html>
