@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{TITLE}}</title>
+<link rel="icon" href="images/favicon.png">
+<style>
+:root{--accent:#b05c3e}
+*{box-sizing:border-box;margin:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+form{width:min(420px,100%);text-align:center;display:flex;flex-direction:column;gap:1.1rem}
+img{width:min(320px,80%);height:auto;margin:0 auto 1rem}
+p{color:#9a9a9a;font-size:.9rem}
+input{padding:.9rem 1.2rem;border-radius:999px;border:1px solid #2d2d2d;background:#0d0d0d;color:#fff;font:inherit;text-align:center}
+input:focus{outline:2px solid var(--accent);outline-offset:2px}
+button{padding:.9rem 1.5rem;border-radius:999px;border:0;background:var(--accent);color:#fff;font:inherit;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;cursor:pointer}
+#e{color:#e08a6c;min-height:1.2em;font-size:.85rem}
+</style>
+</head>
+<body>
+<form id="f" autocomplete="off">
+<img src="images/logo.png" alt="Programme Zero" width="1030" height="155">
+<p>This site is private for now. Enter the password to continue.</p>
+<label for="p" style="position:absolute;left:-9999px">Password</label>
+<input id="p" type="password" placeholder="Password" autocomplete="current-password" autofocus>
+<button type="submit">Enter</button>
+<div id="e" role="status"></div>
+</form>
+<script>
+(function(){
+var S='{{SALT}}',I='{{IV}}',D='{{DATA}}',N={{ITER}},K='pz-pass';
+function b(x){return Uint8Array.from(atob(x),function(c){return c.charCodeAt(0)})}
+async function open(pw){
+  var base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b(S),iterations:N,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+  var buf=await crypto.subtle.decrypt({name:'AES-GCM',iv:b(I)},key,b(D));
+  return new TextDecoder().decode(buf);
+}
+async function go(pw,quiet){
+  try{var html=await open(pw);try{sessionStorage.setItem(K,pw)}catch(e){}
+    var h=location.hash;document.open();document.write(html);document.close();
+    if(h){setTimeout(function(){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView()},50)}
+  }catch(e){if(!quiet){document.getElementById('e').textContent='Wrong password. Please try again.'}}
+}
+var saved='';try{saved=sessionStorage.getItem(K)||''}catch(e){}
+if(!window.crypto||!crypto.subtle){document.getElementById('e').textContent='This page needs a secure (https) connection to open.'}
+if(saved)go(saved,true);
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();go(document.getElementById('p').value,false)});
+})();
+</script>
+</body>
+</html>
