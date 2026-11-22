@@ -103,6 +103,7 @@ nav.top.fx{position:fixed;top:0;left:0;right:0}.thumb.play .pb{position:absolute
 [hidden]{display:none!important}
 .box p.d{min-height:0}.box p:last-child{margin-top:.8rem;padding-top:0}
 .details{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:640px){.details{grid-template-columns:1fr}}
+.view{min-height:100svh}
 </style>
 </head>
 <body>
@@ -161,8 +162,8 @@ addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f();})(
 (function(){var V={contact:document.getElementById('view-contact'),privacy:document.getElementById('view-privacy')},H=document.getElementById('home-view'),T={home:'Programme Zero',contact:'Contact | Programme Zero',privacy:'Privacy | Programme Zero'},cur=null;
 function route(){var h=decodeURIComponent(location.hash.slice(1)),v=(h==='contact'||h==='privacy')?h:'home';
 H.hidden=v!=='home';V.contact.hidden=v!=='contact';V.privacy.hidden=v!=='privacy';document.title=T[v];
-if(v!==cur){window.scrollTo(0,0)}
-if(v==='home'&&h&&h!=='top'){var t=document.getElementById(h);if(t)t.scrollIntoView()}
+if(v==='home'){if(v!==cur&&(!h||h==='top')){window.scrollTo(0,0)}if(h&&h!=='top'){var t=document.getElementById(h);if(t)t.scrollIntoView()}}
+else{var st=document.querySelector('header.strip');window.scrollTo(0,st?st.offsetHeight:0)}
 cur=v}
 addEventListener('hashchange',route);route();})();
 </script>
