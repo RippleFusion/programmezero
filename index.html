@@ -18,12 +18,12 @@
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
 body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
-main{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:4rem 1.5rem;position:relative;text-align:center}
-.logo{width:min(760px,86vw);height:auto;position:relative;z-index:1}
+header.strip{position:relative;height:clamp(150px,22vw,230px);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
+html{scroll-padding-top:60px}.logo{width:min(520px,62vw);height:auto;position:relative;z-index:1}
 .tag{margin-top:2.5rem;color:var(--mute);letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;position:relative;z-index:1}
-.bars{position:absolute;top:0;bottom:0;width:22vw;min-width:90px;display:flex;flex-direction:column;justify-content:space-around;padding:2rem 0;pointer-events:none}
+.bars{position:absolute;top:0;bottom:0;width:24vw;min-width:70px;display:flex;flex-direction:column;justify-content:space-evenly;padding:.6rem 0;pointer-events:none}
 .bars.l{left:0;align-items:flex-start}.bars.r{right:0;align-items:flex-end}
-.bars i{display:block;height:2rem;border-radius:999px;background:var(--bar);animation:drift 9s ease-in-out infinite alternate}
+.bars i{display:block;height:clamp(8px,1.5vw,16px);border-radius:999px;background:var(--bar);animation:drift 9s ease-in-out infinite alternate}
 .bars.l i{border-top-left-radius:0;border-bottom-left-radius:0}.bars.r i{border-top-right-radius:0;border-bottom-right-radius:0}
 .bars i:nth-child(3n){background:var(--bar2)}
 .bars i.o{background:var(--accent);position:relative}
@@ -34,15 +34,15 @@ main{min-height:100svh;display:flex;flex-direction:column;align-items:center;jus
 .bars i:nth-child(odd){animation-delay:-3s}.bars i:nth-child(3n){animation-delay:-6s}
 @media (prefers-reduced-motion:reduce){.bars i{animation:none}}
 footer{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;color:#555;font-size:.75rem}
-@media(max-width:600px){.bars{opacity:.5}.bars i{height:1.3rem}}
+
 
 html{scroll-behavior:smooth}
-nav.top{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:linear-gradient(#000 40%,transparent)}
-nav.top img{height:22px;width:auto;display:block}
+nav.top{position:sticky;top:0;z-index:10;background:#000;border-top:1px solid #1d1d1d;border-bottom:1px solid #1d1d1d;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem 2rem}
+nav.top .soc{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;list-style:none;padding:0}nav.top .soc a{color:var(--mute)}
 nav.top ul{list-style:none;padding:0;display:flex;gap:1.6rem}
 nav.top a{color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
 nav.top a:hover,nav.top a:focus-visible{color:var(--accent)}
-main{min-height:100svh}
+
 section.blk{max-width:1100px;margin:0 auto;padding:6rem 1.5rem}
 section.blk h2{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;font-weight:600}
 .about p{font-size:clamp(1.2rem,2.6vw,1.9rem);line-height:1.5;max-width:30ch;font-weight:300}
@@ -64,17 +64,20 @@ section.blk h2{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;colo
 footer.site{border-top:1px solid #1d1d1d;padding:2.5rem 1.5rem;text-align:center;color:#666;font-size:.8rem;position:static}
 footer.site a{color:var(--ink);text-decoration:none;margin:0 .8rem;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem}
 .note{color:#555;font-size:.75rem;margin-top:1.5rem}
-@media(max-width:640px){nav.top ul{gap:.9rem}nav.top a{font-size:.62rem;letter-spacing:.1em}nav.top img{height:16px}section.blk{padding:4rem 1.25rem}}
+@media(max-width:640px){nav.top ul{gap:.9rem}nav.top a{font-size:.62rem;letter-spacing:.1em}nav.top .soc{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;list-style:none;padding:0}nav.top .soc a{color:var(--mute)}
 </style>
 </head>
 <body>
-<nav class="top" aria-label="Main"><a href="#top"><img src="images/logo.png" alt="Programme Zero"></a>
-<ul><li><a href="#about">About</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#behind">Behind the scenes</a></li></ul></nav>
-<main id="top">
+<header class="strip" id="top">
   <div class="bars l" aria-hidden="true"><i style="width:90%"></i><i style="width:100%"></i><i style="width:60%"></i><i style="width:75%"></i><i style="width:40%"></i><i style="width:80%"></i><i class="o" style="width:85%;margin-left:15%"></i><i style="width:55%"></i><i style="width:95%"></i><i style="width:70%"></i></div>
   <div class="bars r" aria-hidden="true"><i style="width:95%"></i><i style="width:85%"></i><i class="o" style="width:90%"></i><i style="width:100%"></i><i style="width:70%"></i><i style="width:100%"></i><i style="width:80%"></i><i style="width:75%"></i><i style="width:90%"></i><i style="width:85%"></i></div>
   <img class="logo" src="images/logo.png" alt="Programme Zero" width="1030" height="155">
-  <p class="tag">Coming soon</p>
+</header>
+<nav class="top" aria-label="Main">
+<ul><li><a href="#about">About</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#behind">Behind the scenes</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul class="soc" aria-label="Social media"><li><a href="#" rel="noopener">YouTube</a></li><li><a href="#" rel="noopener">Spotify</a></li><li><a href="#" rel="noopener">Apple Podcasts</a></li><li><a href="#" rel="noopener">Instagram</a></li><li><a href="#" rel="noopener">LinkedIn</a></li><li><a href="#" rel="noopener">X</a></li></ul>
+</nav>
+<main>
   </main>
 <section class="blk about" id="about"><h2>About the podcast</h2>
 <p>Programme Zero is a podcast about [one line on what it is and why it exists].</p>
@@ -82,7 +85,8 @@ footer.site a{color:var(--ink);text-decoration:none;margin:0 .8rem;letter-spacin
 <p class="note">Placeholder copy &mdash; to be replaced.</p></section>
 <section class="blk" id="episodes"><h2>Episodes</h2><div class="grid"><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 01</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jan 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 02</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Feb 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 03</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Mar 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 04</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Apr 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 05</b></div><h3>Episode title goes here</h3><p>Guest name &middot; May 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 06</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jun 2027</p><em>Watch trailer</em></a></div></section>
 <section class="blk" id="behind"><h2>Behind the scenes</h2><div class="gallery"><div>PHOTO 01</div><div>PHOTO 02</div><div>PHOTO 03</div><div>PHOTO 04</div><div>PHOTO 05</div><div>PHOTO 06</div><div>PHOTO 07</div><div>PHOTO 08</div></div></section>
-<footer class="site"><a href="#about">About</a><a href="#episodes">Episodes</a><a href="#behind">Behind the scenes</a><p style="margin-top:1.2rem">&copy; 2026 Programme Zero</p></footer>
+<section class="blk" id="contact"><h2>Contact</h2><p style="font-size:1.2rem;font-weight:300">[Contact details or email address go here]</p><p class="note">Placeholder &mdash; to be replaced.</p></section>
+<footer class="site"><a href="#about">About</a><a href="#episodes">Episodes</a><a href="#behind">Behind the scenes</a><a href="#contact">Contact</a><p style="margin-top:1.2rem">&copy; 2026 Programme Zero</p></footer>
 
 </body>
 </html>
