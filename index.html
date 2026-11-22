@@ -39,7 +39,7 @@ footer{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;color:#5
 html{scroll-behavior:smooth}
 nav.top{position:sticky;top:0;z-index:10;background:#000;border-top:1px solid #1d1d1d;border-bottom:1px solid #1d1d1d;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:.8rem 2rem}
 .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
-nav.top ul{list-style:none;padding:0;display:flex;gap:1.6rem}
+nav.top ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
 nav.top a{color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
 nav.top a:hover,nav.top a:focus-visible{color:var(--accent)}
 
@@ -62,10 +62,11 @@ section.blk h2{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;colo
 .gallery div{aspect-ratio:1;border-radius:12px;background:#0d0d0d;border:1px solid #1d1d1d;display:flex;align-items:center;justify-content:center;color:#444;font-size:.7rem;letter-spacing:.2em}
 .gallery div:nth-child(5n+2){background:#1a0f0b}
 footer.site{border-top:1px solid #1d1d1d;padding:2.5rem 1.5rem;text-align:center;color:#666;font-size:.8rem;position:static}
-footer.site a{color:var(--ink);text-decoration:none;margin:0 .8rem;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem}
+footer.site a{display:inline-block;color:var(--ink);text-decoration:none;margin:.3rem .6rem;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem}
 .note{color:#555;font-size:.75rem;margin-top:1.5rem}
-@media(max-width:640px){nav.top ul{gap:.9rem}nav.top a{font-size:.62rem;letter-spacing:.1em}.soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
-</style>
+.soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
+@media(max-width:640px){.bars i.o::after{display:none}.bars{width:18vw}nav.top ul{gap:.5rem .9rem;justify-content:flex-end}nav.top a{font-size:.62rem;letter-spacing:.1em}section.blk{padding:4rem 1.25rem}}
+.thumb.play .pb{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.5)}.thumb.play .pb::after{content:"";position:absolute;left:21px;top:15px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.thumb.play i{opacity:.5}</style>
 </head>
 <body>
 <header class="strip" id="top">
@@ -74,7 +75,7 @@ footer.site a{color:var(--ink);text-decoration:none;margin:0 .8rem;letter-spacin
   <img class="logo" src="images/logo.png" alt="Programme Zero" width="1030" height="155">
 </header>
 <nav class="top" aria-label="Main">
-<ul><li><a href="#about">About</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#behind">Behind the scenes</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul><li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#trailers">Trailers</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#contact">Contact</a></li></ul>
 </nav>
 <main>
   </main>
@@ -82,11 +83,11 @@ footer.site a{color:var(--ink);text-decoration:none;margin:0 .8rem;letter-spacin
 <p>Programme Zero is a podcast about [one line on what it is and why it exists].</p>
 <p>[Two or three sentences on who hosts it, who it's for and what listeners will get from each episode.]</p>
 <p class="note">Placeholder copy &mdash; to be replaced.</p></section>
-<section class="blk" id="episodes"><h2>Episodes</h2><div class="grid"><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 01</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jan 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 02</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Feb 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 03</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Mar 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 04</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Apr 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 05</b></div><h3>Episode title goes here</h3><p>Guest name &middot; May 2027</p><em>Watch trailer</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 06</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jun 2027</p><em>Watch trailer</em></a></div></section>
-<section class="blk" id="behind"><h2>Behind the scenes</h2><div class="gallery"><div>PHOTO 01</div><div>PHOTO 02</div><div>PHOTO 03</div><div>PHOTO 04</div><div>PHOTO 05</div><div>PHOTO 06</div><div>PHOTO 07</div><div>PHOTO 08</div></div></section>
+<section class="blk" id="trailers"><h2>Trailers</h2><div class="grid"><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 01</b></div><h3>Trailer title goes here</h3><p>0:45 &middot; Season 1</p></a><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 02</b></div><h3>Trailer title goes here</h3><p>0:30 &middot; Season 1</p></a><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 03</b></div><h3>Trailer title goes here</h3><p>0:58 &middot; Season 1</p></a></div></section>
+<section class="blk" id="episodes"><h2>Episodes</h2><div class="grid"><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 01</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jan 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 02</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Feb 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 03</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Mar 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 04</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Apr 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 05</b></div><h3>Episode title goes here</h3><p>Guest name &middot; May 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 06</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jun 2027</p><em>Listen</em></a></div></section>
 <section class="blk" id="contact"><h2>Contact</h2><p style="font-size:1.2rem;font-weight:300">[Contact details or email address go here]</p><p class="note">Placeholder &mdash; to be replaced.</p></section>
 <footer class="site">
-<ul class="soc" aria-label="Social media"><li><a href="#" rel="noopener">YouTube</a></li><li><a href="#" rel="noopener">Spotify</a></li><li><a href="#" rel="noopener">Apple Podcasts</a></li><li><a href="#" rel="noopener">Instagram</a></li><li><a href="#" rel="noopener">LinkedIn</a></li><li><a href="#" rel="noopener">X</a></li></ul><a href="#about">About</a><a href="#episodes">Episodes</a><a href="#behind">Behind the scenes</a><a href="#contact">Contact</a><p style="margin-top:1.2rem">&copy; 2026 Programme Zero</p></footer>
+<ul class="soc" aria-label="Social media"><li><a href="#" rel="noopener">YouTube</a></li><li><a href="#" rel="noopener">Spotify</a></li><li><a href="#" rel="noopener">Apple Podcasts</a></li><li><a href="#" rel="noopener">Instagram</a></li><li><a href="#" rel="noopener">LinkedIn</a></li><li><a href="#" rel="noopener">X</a></li></ul><a href="#top">Home</a><a href="#about">About</a><a href="#trailers">Trailers</a><a href="#episodes">Episodes</a><a href="#contact">Contact</a><p style="margin-top:1.2rem">&copy; 2026 Programme Zero</p></footer>
 
 </body>
 </html>
