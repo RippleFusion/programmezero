@@ -4,7 +4,7 @@ Site for [programmezero.com](https://programmezero.com), hosted on GitHub Pages.
 
 ## How the password works
 
-The whole site is one page: `index.html` in the repo root is an **encrypted** copy of `src/index.html`, which holds the home, contact and privacy views. Visitors see a password screen and the page decrypts in their browser. `contact.html` and `privacy.html` are small redirects to the home page (they open the Contact and Privacy views). The address bar always stays as the plain domain.
+The whole site is one scrolling page in menu order (home, listen, about, hosts, trailers, episodes, newsletter, questions, contact) plus a Privacy view. `index.html` in the repo root is an **encrypted** copy of `src/index.html`. Visitors see a password screen and the page decrypts in their browser. `contact.html` and `privacy.html` are small redirects to the home page. The address bar always stays as the plain domain.
 
 - Edit the real pages in `src/`.
 - Rebuild the locked pages: `PASSWORD='the-password' node tools/lock.mjs` (needs Node 18+), then commit the changed root files.
