@@ -17,7 +17,7 @@
 :root{--bg:#000;--ink:#fff;--mute:#9a9a9a;--accent:#b05c3e;--bar:#1f1f1f;--bar2:#2d2d2d}
 *{box-sizing:border-box;margin:0}
 html{min-height:100%}
-body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
 header.strip{position:relative;height:clamp(150px,22vw,230px);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
 html{scroll-padding-top:60px}.logo{width:min(520px,62vw);height:auto;position:relative;z-index:1}
 .tag{margin-top:2.5rem;color:var(--mute);letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;position:relative;z-index:1}
@@ -37,7 +37,7 @@ footer{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;color:#5
 
 
 html{scroll-behavior:smooth}
-nav.top{position:sticky;top:0;z-index:10;background:#000;border-top:1px solid #1d1d1d;border-bottom:1px solid #1d1d1d;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.8rem 2rem}
+nav.top{position:-webkit-sticky;position:sticky;top:0;z-index:10;background:#000;border-top:1px solid #1d1d1d;border-bottom:1px solid #1d1d1d;padding:.9rem 1.5rem;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.8rem 2rem}
 .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
 nav.top ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
 nav.top a{color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
@@ -87,7 +87,7 @@ footer.site a{display:inline-block;color:var(--ink);text-decoration:none;margin:
 .faq summary{cursor:pointer;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}.faq summary::after{content:"+";color:var(--accent)}.faq details[open] summary::after{content:"\2212"}
 .faq p{color:var(--mute);margin-top:.8rem;line-height:1.6;max-width:60ch}.faq a{color:var(--accent)}
 footer.site .fl a{color:var(--mute);text-decoration:none;margin:0 .8rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}footer.site .fl{margin-bottom:.8rem}
-</style>
+nav.top.fx{position:fixed;top:0;left:0;right:0}</style>
 </head>
 <body>
 <header class="strip" id="top">
@@ -125,6 +125,14 @@ footer.site .fl a{color:var(--mute);text-decoration:none;margin:0 .8rem;font-siz
 document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('em'),m=document.getElementById('nlm');
 if(!i.value||i.value.indexOf('@')<1){m.textContent='Please enter a valid email address.';return}
 m.textContent='Opening your email app to send your sign-up request...';location.href='mailto:hello@programmezero.com?subject='+encodeURIComponent('Newsletter sign-up')+'&body='+encodeURIComponent('Please add me to The Day Zero Dispatch: '+i.value);});
+</script>
+<script>
+(function(){var n=document.querySelector('nav.top'),h=document.querySelector('header.strip');if(!n||!h)return;
+var sp=document.createElement('div');n.parentNode.insertBefore(sp,n);
+function f(){var on=h.getBoundingClientRect().bottom<=0;
+if(on){if(!n.classList.contains('fx')){sp.style.height=n.offsetHeight+'px';n.classList.add('fx')}}
+else{n.classList.remove('fx');sp.style.height='0'}}
+addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f();})();
 </script>
 </body>
 </html>
