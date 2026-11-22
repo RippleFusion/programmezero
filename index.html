@@ -66,7 +66,28 @@ footer.site a{display:inline-block;color:var(--ink);text-decoration:none;margin:
 .note{color:#555;font-size:.75rem;margin-top:1.5rem}
 .soc{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.4rem;list-style:none;padding:0;margin-bottom:1.5rem}footer.site .soc a{color:var(--mute)}footer.site .soc a:hover{color:var(--accent)}
 @media(max-width:640px){.bars i.o::after{display:none}.bars{width:18vw}nav.top ul{gap:.5rem .9rem;justify-content:flex-end}nav.top a{font-size:.62rem;letter-spacing:.1em}section.blk{padding:4rem 1.25rem}}
-.thumb.play .pb{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.5)}.thumb.play .pb::after{content:"";position:absolute;left:21px;top:15px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.thumb.play i{opacity:.5}.lede{color:var(--mute);max-width:52ch;line-height:1.6;margin:-1rem 0 2rem}.pts{list-style:none;padding:0;margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem}.pts li{border-top:1px solid var(--accent);padding-top:1rem}.pts b{display:block;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600}.pts span{display:block;color:var(--mute);margin-top:.6rem;line-height:1.5;font-size:.95rem}.about p.note{font-size:.75rem;color:#555;max-width:none;margin-top:2rem}</style>
+.thumb.play .pb{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.5)}.thumb.play .pb::after{content:"";position:absolute;left:21px;top:15px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.thumb.play i{opacity:.5}.lede{color:var(--mute);max-width:52ch;line-height:1.6;margin:-1rem 0 2rem}.pts{list-style:none;padding:0;margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem}.pts li{border-top:1px solid var(--accent);padding-top:1rem}.pts b{display:block;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600}.pts span{display:block;color:var(--mute);margin-top:.6rem;line-height:1.5;font-size:.95rem}.about p.note{font-size:.75rem;color:#555;max-width:none;margin-top:2rem}.intro{max-width:1100px;margin:0 auto;padding:5rem 1.5rem 1rem}
+.intro h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:300;line-height:1.1;max-width:16ch}
+.intro p{color:var(--mute);margin-top:1.2rem;max-width:46ch;line-height:1.6;font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid #2d2d2d;color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;background:transparent;cursor:pointer;font-family:inherit}
+.btn.pri{background:var(--accent);border-color:var(--accent);font-weight:600}
+.btn:hover,.btn:focus-visible{border-color:var(--accent)}
+.plats{display:flex;flex-wrap:wrap;gap:1rem}.plat{padding:1rem 1.6rem}
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;border:1px solid #1d1d1d;background:#0d0d0d;border-radius:14px;padding:2rem}
+.news h3,.hostrow h3{font-size:1.4rem;font-weight:300}.news p,.hostrow p{color:var(--mute);margin-top:.8rem;line-height:1.6}
+#nl{display:flex;flex-wrap:wrap;gap:.8rem;align-items:flex-start;align-content:center}
+#nl input{flex:1 1 200px;min-width:0;padding:.85rem 1.1rem;border-radius:999px;border:1px solid #2d2d2d;background:#000;color:var(--ink);font:inherit}
+#nl input:focus{outline:2px solid var(--accent);outline-offset:2px}#nl .note{flex-basis:100%;margin:0}
+.sr{position:absolute;left:-9999px}
+.hostrow{display:flex;flex-wrap:wrap;gap:2rem;align-items:center}.hostrow>div:last-child{flex:1 1 320px;max-width:56ch}
+.ph{width:180px;height:180px;border-radius:50%;background:#0d0d0d;border:1px solid #1d1d1d;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:0 24px}
+.ph i{display:block;height:10px;border-radius:99px;background:var(--bar2)}.ph i.o{background:var(--accent);width:60%}
+.faq details{border-top:1px solid #1d1d1d;padding:1.1rem 0}.faq details:last-of-type{border-bottom:1px solid #1d1d1d}
+.faq summary{cursor:pointer;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}.faq summary::after{content:"+";color:var(--accent)}.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--mute);margin-top:.8rem;line-height:1.6;max-width:60ch}.faq a{color:var(--accent)}
+footer.site .fl a{color:var(--mute);text-decoration:none;margin:0 .8rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}footer.site .fl{margin-bottom:.8rem}
+</style>
 </head>
 <body>
 <header class="strip" id="top">
@@ -78,15 +99,32 @@ footer.site a{display:inline-block;color:var(--ink);text-decoration:none;margin:
 <ul><li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#trailers">Trailers</a></li><li><a href="#episodes">Episodes</a></li><li><a href="contact.html">Contact</a></li></ul>
 </nav>
 <main>
-  </main>
-<section class="blk about" id="about"><h2>About the podcast</h2>
-<p>Every programme has a day zero. This is where we go back to it.</p>
-<p>Programme Zero is a podcast about what really happens when organisations try to change. Each episode follows one programme from the very beginning: the brief, the pressure and the first decisions. We talk to the people who sponsored, led and delivered it, and ask what worked, what didn't and what they would do differently.</p>
+<section class="intro"><h1>Every programme has a day zero.</h1><p>A podcast about what really happens when organisations try to change.</p><div class="btns"><a class="btn pri" href="#listen">&#9654; Listen now</a><a class="btn" href="#listen">All platforms</a></div></section>
+  <section class="blk about" id="about"><h2>About the podcast</h2>
+<p>Programme Zero goes back to where every programme starts.</p>
+<p>Each episode follows one programme from the very beginning: the brief, the pressure and the first decisions. We talk to the people who sponsored, led and delivered it, and ask what worked, what didn't and what they would do differently.</p>
 <ul class="pts"><li><b>Honest</b><span>Real programmes, told by the people who were in the room.</span></li><li><b>Practical</b><span>Lessons you can use on your own programme on Monday morning.</span></li><li><b>Jargon-free</b><span>Plain conversation, no slide decks and no buzzwords.</span></li></ul>
 <p class="note">Draft wording &mdash; please check it describes the show correctly.</p></section>
 <section class="blk" id="trailers"><h2>Trailers</h2><p class="lede">New here? Start with a short trailer for the show, or get a taste of an episode before you listen.</p><div class="grid"><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 01</b></div><h3>Programme Zero: the trailer</h3><p>0:45 &middot; Season 1</p></a><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 02</b></div><h3>Season one: what to expect</h3><p>0:30 &middot; Season 1</p></a><a class="card" href="#trailers"><div class="thumb play"><i></i><i class="o"></i><i></i><span class="pb"></span><b>TRAILER 03</b></div><h3>Day zero: why we start at the beginning</h3><p>0:58 &middot; Season 1</p></a></div></section>
 <section class="blk" id="episodes"><h2>Episodes</h2><p class="lede">One programme per episode, told from day zero. Listen here or on your favourite podcast platform.</p><div class="grid"><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 01</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jan 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 02</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Feb 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 03</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Mar 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 04</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Apr 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 05</b></div><h3>Episode title goes here</h3><p>Guest name &middot; May 2027</p><em>Listen</em></a><a class="card" href="#episodes"><div class="thumb"><i></i><i class="o"></i><i></i><b>EP 06</b></div><h3>Episode title goes here</h3><p>Guest name &middot; Jun 2027</p><em>Listen</em></a></div></section>
-<footer class="site"><p>&copy; 2026 Programme Zero</p></footer>
+<section class="blk" id="listen"><h2>Listen everywhere</h2><p class="lede">Subscribe on your favourite platform so you never miss an episode.</p><div class="plats"><a class="btn plat" href="#" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.5 9.5c3.5-1.2 7.5-.9 11 1M7.2 12.8c3-.9 6.2-.6 9 .9M8 15.8c2.4-.6 5-.3 7.2.8"/></svg><span>Spotify</span></a><a class="btn plat" href="#" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="2.2" fill="currentColor"/><path d="M12 13.5v5.5M9.3 17.5c-.6.9-.3 2 .7 2.2h4c1-.2 1.3-1.3.7-2.2"/><path d="M7.5 14.5a6 6 0 1 1 9 0M5 17a9 9 0 1 1 14 0"/></svg><span>Apple Podcasts</span></a><a class="btn plat" href="#" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg><span>YouTube</span></a><a class="btn plat" href="#" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="1.4" fill="currentColor"/><path d="M4.5 11a8.5 8.5 0 0 1 8.5 8.5M4.5 5a14.5 14.5 0 0 1 14.5 14.5"/></svg><span>RSS</span></a></div><p class="note">Links to be added.</p></section>
+<section class="blk" id="newsletter"><h2>Newsletter</h2><div class="news"><div><h3>The Day Zero Dispatch</h3><p>One lesson from one programme, straight to your inbox. No jargon, no spam, and you can unsubscribe any time.</p></div>
+<form id="nl" novalidate><label for="em" class="sr">Email address</label><input id="em" type="email" placeholder="you@company.com" autocomplete="email" required><button class="btn pri" type="submit">Subscribe</button><p id="nlm" role="status" class="note"></p></form></div></section>
+<section class="blk" id="host"><h2>Meet the host</h2><div class="hostrow"><div class="ph" aria-hidden="true"><i></i><i class="o"></i><i></i></div><div><h3>[Host name]</h3><p>[Two or three sentences on the host: their background in leading change programmes, and why they started the show.]</p><p class="note">Placeholder &mdash; to be replaced.</p></div></div></section>
+<section class="blk faq" id="faq"><h2>Questions</h2>
+<details><summary>Who is Programme Zero for?</summary><p>Anyone who sponsors, leads or delivers change: executives, programme and project managers, consultants and the teams around them.</p></details>
+<details><summary>Who hosts it?</summary><p>The show is hosted by [host name]. See the host section above.</p></details>
+<details><summary>Where can I listen?</summary><p>On Spotify, Apple Podcasts and YouTube, or add the RSS feed to any podcast app. The links are in the Listen everywhere section above.</p></details>
+<details><summary>How often do new episodes come out?</summary><p>[Frequency to be confirmed], with trailers and bonus clips in between.</p></details>
+<details><summary>Can I be a guest?</summary><p>Yes. If you have a programme story worth telling, use the Guests details on the <a href="contact.html">contact page</a>.</p></details>
+<details><summary>Is Programme Zero independent?</summary><p>[To be confirmed: wording on independence and any company links.]</p></details></section>
+</main>
+<footer class="site"><p class="fl"><a href="#">RSS</a><a href="privacy.html">Privacy</a></p><p>&copy; 2026 Programme Zero</p></footer>
 
+<script>
+document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('em'),m=document.getElementById('nlm');
+if(!i.value||i.value.indexOf('@')<1){m.textContent='Please enter a valid email address.';return}
+m.textContent='Sign-up is not connected yet. Nothing has been saved.';});
+</script>
 </body>
 </html>
