@@ -162,21 +162,24 @@ else{n.classList.remove('fx');sp.style.height='0'}}
 addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f();})();
 </script>
 <script>
-(function(){var V={contact:document.getElementById('view-contact'),privacy:document.getElementById('view-privacy')},H=document.getElementById('home-view'),T={home:'Programme Zero',contact:'Contact | Programme Zero',privacy:'Privacy | Programme Zero'},cur=null;
-function route(){var h=decodeURIComponent(location.hash.slice(1)),v=(h==='contact'||h==='privacy')?h:'home';
+(function(){var V={contact:document.getElementById('view-contact'),privacy:document.getElementById('view-privacy')},H=document.getElementById('home-view'),T={home:'Programme Zero',contact:'Contact | Programme Zero',privacy:'Privacy | Programme Zero'};
+function clean(){var p=location.pathname.replace(/index\.html$/,'');if(location.hash||p!==location.pathname){try{history.replaceState(null,'',p+location.search)}catch(e){}}}
+function show(h){var v=(h==='contact'||h==='privacy')?h:'home';
 H.hidden=v!=='home';V.contact.hidden=v!=='contact';V.privacy.hidden=v!=='privacy';document.title=T[v];
-if(v==='home'){if(v!==cur&&(!h||h==='top')){window.scrollTo(0,0)}if(h&&h!=='top'){var t=document.getElementById(h);if(t)t.scrollIntoView()}}
+if(v==='home'){if(!h||h==='top'){window.scrollTo(0,0)}else{var t=document.getElementById(h);if(t)t.scrollIntoView()}}
 else{var st=document.querySelector('header.strip');window.scrollTo(0,st?st.offsetHeight:0)}
-cur=v}
-addEventListener('hashchange',route);route();})();
+window.PZ={view:v,id:h};document.dispatchEvent(new Event('pzroute'));clean()}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;e.preventDefault();show(a.getAttribute('href').slice(1))});
+addEventListener('hashchange',function(){show(decodeURIComponent(location.hash.slice(1)))});
+show(decodeURIComponent(location.hash.slice(1)));})();
 </script>
 <script>
 (function(){var links=[].slice.call(document.querySelectorAll('nav.top a')),nav=document.querySelector('nav.top');
 function set(h){links.forEach(function(a){if(a.getAttribute('href')===h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
-function upd(){var h=location.hash;if(h==='#contact'){set('#contact');return}if(h==='#privacy'){set('');return}
+function upd(){var v=(window.PZ&&window.PZ.view)||'home';if(v==='contact'){set('#contact');return}if(v==='privacy'){set('');return}
 var cur='#top',nb=nav.getBoundingClientRect().bottom;
 ['about','trailers','episodes'].forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=nb+40)cur='#'+i});set(cur)}
-addEventListener('scroll',upd,{passive:true});addEventListener('hashchange',function(){setTimeout(upd,60)});addEventListener('resize',upd);upd();})();
+addEventListener('scroll',upd,{passive:true});document.addEventListener('pzroute',function(){setTimeout(upd,60)});addEventListener('resize',upd);upd();})();
 </script>
 </body>
 </html>
