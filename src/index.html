@@ -87,7 +87,21 @@ footer.site a{display:inline-block;color:var(--ink);text-decoration:none;margin:
 .faq summary{cursor:pointer;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}.faq summary::after{content:"+";color:var(--accent)}.faq details[open] summary::after{content:"\2212"}
 .faq p{color:var(--mute);margin-top:.8rem;line-height:1.6;max-width:60ch}.faq a{color:var(--accent)}
 footer.site .fl a{color:var(--mute);text-decoration:none;margin:0 .8rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}footer.site .fl{margin-bottom:.8rem}
-nav.top.fx{position:fixed;top:0;left:0;right:0}</style>
+nav.top.fx{position:fixed;top:0;left:0;right:0}.thumb.play .pb{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.5)}.thumb.play .pb::after{content:"";position:absolute;left:21px;top:15px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.thumb.play i{opacity:.5}
+.contact-hero{max-width:1100px;margin:0 auto;padding:5rem 1.5rem 2rem}
+.contact-hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:300;line-height:1.1;max-width:14ch}
+.contact-hero p{color:var(--mute);margin-top:1.2rem;max-width:46ch;line-height:1.6}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem}
+.box{border:1px solid #1d1d1d;background:#0d0d0d;border-radius:14px;padding:1.6rem}
+.box h3{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.box p{margin-top:.8rem;font-size:1.1rem;font-weight:300}
+.socials{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:1rem}
+.tile{display:flex;flex-direction:column;align-items:center;gap:.9rem;padding:1.6rem .5rem;text-align:center;white-space:nowrap;border:1px solid #1d1d1d;background:#0d0d0d;border-radius:14px;color:var(--ink);text-decoration:none;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.tile:hover,.tile:focus-visible{border-color:var(--accent);color:var(--accent)}
+.box p.d{font-size:.95rem;color:var(--mute);line-height:1.5;min-height:4.5em}.box p:last-child{font-size:1.05rem;margin-top:1.2rem}.details{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:640px){.details{grid-template-columns:1fr}}.box a{overflow-wrap:anywhere}.box{display:flex;flex-direction:column}.box p:last-child{margin-top:auto;padding-top:1.2rem}.box a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent)}.box a:hover{color:var(--accent)}nav.top.fx{position:fixed;top:0;left:0;right:0}
+.box p.d{font-size:.95rem;color:var(--mute);line-height:1.5;min-height:3em}.box p:last-child{font-size:1.05rem;margin-top:1.2rem}.details{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.box{display:flex;flex-direction:column}.box p:last-child{margin-top:auto;padding-top:1.2rem}nav.top.fx{position:fixed;top:0;left:0;right:0}
+[hidden]{display:none!important}
+</style>
 </head>
 <body>
 <header class="strip" id="top">
@@ -96,9 +110,9 @@ nav.top.fx{position:fixed;top:0;left:0;right:0}</style>
   <img class="logo" src="images/logo.png" alt="Programme Zero" width="1030" height="155">
 </header>
 <nav class="top" aria-label="Main">
-<ul><li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#trailers">Trailers</a></li><li><a href="#episodes">Episodes</a></li><li><a href="contact.html">Contact</a></li></ul>
+<ul><li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#trailers">Trailers</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#contact">Contact</a></li></ul>
 </nav>
-<main>
+<main id="home-view">
 <section class="intro"><h1>Every programme has a day zero.</h1><p>A podcast about what really happens when organisations try to change.</p><div class="btns"><a class="btn pri" href="#listen">&#9654; Listen now</a><a class="btn" href="#listen">All platforms</a></div></section>
   <section class="blk about" id="about"><h2>About the podcast</h2>
 <p>Programme Zero goes back to where every programme starts.</p>
@@ -116,10 +130,17 @@ nav.top.fx{position:fixed;top:0;left:0;right:0}</style>
 <details><summary>Who hosts it?</summary><p>Programme Zero is hosted by Ian Lloyd and Nadeem Lone. Meet them in the hosts section above.</p></details>
 <details><summary>Where can I listen?</summary><p>On Spotify, Apple Podcasts and YouTube. The links are in the Listen everywhere section above.</p></details>
 <details><summary>How often do new episodes come out?</summary><p>Every week.</p></details>
-<details><summary>Can I be a guest?</summary><p>Yes. If you have a programme story worth telling, use the Guests details on the <a href="contact.html">contact page</a>.</p></details>
+<details><summary>Can I be a guest?</summary><p>Yes. If you have a programme story worth telling, use the Guests details on the <a href="#contact">contact page</a>.</p></details>
 </section>
 </main>
-<footer class="site"><p class="fl"><a href="privacy.html">Privacy</a></p><p>&copy; 2026 Programme Zero</p></footer>
+<main id="view-contact" class="view" hidden>
+<div class="contact-hero"><h1>Get in touch</h1><p>Whether you want to be a guest, work with us or talk to us about the show, we would love to hear from you.</p></div>
+<section class="blk" style="padding-top:2rem"><h2>Contact details</h2><div class="details"><div class="box"><h3>General</h3><p class="d">Questions, feedback, or just to say hello.</p><p><a href="mailto:hello@programmezero.com?subject=General">hello@programmezero.com</a></p></div><div class="box"><h3>Work with us</h3><p class="d">Sponsorship, partnerships and commissions.</p><p><a href="mailto:workwithus@programmezero.com?subject=Work%20with%20us">workwithus@programmezero.com</a></p></div><div class="box"><h3>Guests</h3><p class="d">Have a programme story worth telling? Pitch yourself, or someone we should hear from.</p><p><a href="mailto:guests@programmezero.com?subject=Guests">guests@programmezero.com</a></p></div><div class="box"><h3>Press</h3><p class="d">Interviews, quotes and media enquiries.</p><p><a href="mailto:press@programmezero.com?subject=Press">press@programmezero.com</a></p></div></div></section>
+<section class="blk" style="padding-top:2rem"><h2>Follow Programme Zero</h2><ul class="socials"><li><a href="#" rel="noopener" class="tile" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.5 9.5c3.5-1.2 7.5-.9 11 1M7.2 12.8c3-.9 6.2-.6 9 .9M8 15.8c2.4-.6 5-.3 7.2.8"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="2.2" fill="currentColor"/><path d="M12 13.5v5.5M9.3 17.5c-.6.9-.3 2 .7 2.2h4c1-.2 1.3-1.3.7-2.2"/><path d="M7.5 14.5a6 6 0 1 1 9 0M5 17a9 9 0 1 1 14 0"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".9" fill="currentColor"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M13.5 20.5V13h2.4l.4-2.8h-2.8V8.6c0-.8.3-1.3 1.4-1.3h1.5V4.8c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v1.9H8.4V13h2.4v7.5"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5v11a3.6 3.6 0 1 1-3.6-3.6M14 3.5c.3 2.3 1.8 3.9 4.2 4.2"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.6v.1M11.5 16.5v-6M11.5 13c0-1.6 1-2.5 2.3-2.5s2.2.9 2.2 2.5v3.5"/></svg></a></li><li><a href="#" rel="noopener" class="tile" aria-label="X" title="X"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></a></li></ul></section>
+</main>
+<main id="view-privacy" class="view" hidden><div class="contact-hero"><h1>Privacy</h1></div><section class="blk" style="padding-top:1rem;max-width:720px"><p class="lede" style="margin:0 0 1.5rem">Draft wording &mdash; to be reviewed before the newsletter goes live.</p>
+<p style="line-height:1.7;color:var(--mute)">This site does not use cookies or tracking. If you subscribe to the newsletter, we will use your email address only to send you the newsletter, and we will not share it with anyone else. You can unsubscribe at any time using the link in every email. To ask us to delete your data, use the General contact on the <a href="#contact" style="color:var(--accent)">contact page</a>.</p></section></main>
+<footer class="site"><p class="fl"><a href="#privacy">Privacy</a></p><p>&copy; 2026 Programme Zero</p></footer>
 
 <script>
 document.getElementById('nl').addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('em'),m=document.getElementById('nlm');
@@ -133,6 +154,15 @@ function f(){var on=h.getBoundingClientRect().bottom<=0;
 if(on){if(!n.classList.contains('fx')){sp.style.height=n.offsetHeight+'px';n.classList.add('fx')}}
 else{n.classList.remove('fx');sp.style.height='0'}}
 addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f();})();
+</script>
+<script>
+(function(){var V={contact:document.getElementById('view-contact'),privacy:document.getElementById('view-privacy')},H=document.getElementById('home-view'),T={home:'Programme Zero',contact:'Contact | Programme Zero',privacy:'Privacy | Programme Zero'},cur=null;
+function route(){var h=decodeURIComponent(location.hash.slice(1)),v=(h==='contact'||h==='privacy')?h:'home';
+H.hidden=v!=='home';V.contact.hidden=v!=='contact';V.privacy.hidden=v!=='privacy';document.title=T[v];
+if(v!==cur){window.scrollTo(0,0)}
+if(v==='home'&&h&&h!=='top'){var t=document.getElementById(h);if(t)t.scrollIntoView()}
+cur=v}
+addEventListener('hashchange',route);route();})();
 </script>
 </body>
 </html>
