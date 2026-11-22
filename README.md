@@ -1,7 +1,14 @@
 # Programme Zero
 
-Landing page for [programmezero.com](https://programmezero.com). Static HTML, hosted on GitHub Pages.
+Site for [programmezero.com](https://programmezero.com), hosted on GitHub Pages.
 
-- `index.html` is the whole page (inline CSS).
-- `CNAME` sets the custom domain.
-- Replace the "Coming soon" line and the mailto link in `index.html` once the brief is final.
+## How the password works
+
+The pages in the repo root (`index.html`, `contact.html`, `privacy.html`) are **encrypted** copies of the pages in `src/`. Visitors see a password screen and the page decrypts in their browser.
+
+- Edit the real pages in `src/`.
+- Rebuild the locked pages: `PASSWORD='the-password' node tools/lock.mjs` (needs Node 18+), then commit the changed root files.
+- The password is not stored in this repo.
+- To launch publicly: copy `src/*.html` over the root files, and set `robots.txt` back to `Allow: /`.
+
+Note: this is a light gate, not high security. Anything in `src/` is readable if the repo is public.
