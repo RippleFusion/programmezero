@@ -12,3 +12,8 @@ The whole site is one scrolling page in menu order (home, listen, about, hosts, 
 - To launch publicly: copy `src/index.html` over the root `index.html`, and set `robots.txt` back to `Allow: /`.
 
 Note: this is a light gate, not high security. Anything in `src/` is readable if the repo is public.
+
+## Fonts and thumbnails
+
+- The site font is Sora (SIL Open Font Licence), saved in `fonts/` so nothing loads from outside.
+- `tools/make_thumb.py` rebuilds the Episode 1 thumbnail. Run it with `SORA_DIR=<folder with sora-latin-<weight>-normal.woff files>`.
