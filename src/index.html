@@ -175,10 +175,19 @@ footer.site a{text-transform:none;letter-spacing:normal;font-size:inherit}
 @keyframes ping{0%{transform:scale(.5);opacity:.6}100%{transform:scale(1.2);opacity:0}}
 @keyframes rise{to{opacity:1;transform:none}}
 @keyframes glow{0%{transform:translate(-3%,-2%)}100%{transform:translate(4%,3%)}}
-@media(prefers-reduced-motion:reduce){.intro::before,.orb i,.orbit,.intro>*{animation:none!important}.intro>*{opacity:1!important;transform:none!important}.orb i{display:none}}
+@media(prefers-reduced-motion:reduce){.intro::before,.orb,.orb i,.orbit,.orbit b,.orbit s,.orbit u,.intro>*{animation:none!important}.orbit s{display:none}.intro>*{opacity:1!important;transform:none!important}.orb i{display:none}}
 @media(max-width:640px){.orb{width:60vw;right:-22vw}}
 #host{padding-top:2rem}
 #newsletter{padding-top:2rem}
+.orbit s{position:absolute;top:-27px;left:50%;margin-left:-27px;width:54px;height:54px;border-radius:50%;border:2px solid #fff;opacity:0;pointer-events:none;animation:crash 16.0588s linear infinite}
+.orbit s::before{content:"";position:absolute;inset:-26px;border-radius:50%;background:repeating-conic-gradient(rgba(255,255,255,.95) 0 3deg,transparent 3deg 24deg);-webkit-mask:radial-gradient(circle,transparent 26%,#000 30%,#000 56%,transparent 72%);mask:radial-gradient(circle,transparent 26%,#000 30%,#000 56%,transparent 72%)}
+.orbit b{animation:bump 16.0588s linear infinite}
+.orbit u{animation:bump2 16.0588s linear infinite}
+.orb{animation:jolt 16.0588s linear infinite}
+@keyframes crash{0%,46%{opacity:0;transform:scale(.15)}50%{opacity:1;transform:scale(.7)}56%{opacity:.85;transform:scale(1.5)}66%,100%{opacity:0;transform:scale(2.6)}}
+@keyframes bump{0%,44%{transform:scale(1)}50%{transform:scale(2.4);box-shadow:0 0 34px 12px rgba(255,200,170,.95)}58%,100%{transform:scale(1)}}
+@keyframes bump2{0%,44%{transform:rotate(45deg) scale(1)}50%{transform:rotate(225deg) scale(1.9);box-shadow:0 0 26px 8px rgba(255,255,255,.9)}58%,100%{transform:rotate(405deg) scale(1)}}
+@keyframes jolt{0%,48%{transform:translateY(-50%)}49%{transform:translate(-5px,calc(-50% + 3px))}50%{transform:translate(4px,calc(-50% - 4px))}51%{transform:translate(-3px,calc(-50% + 2px))}52%,100%{transform:translateY(-50%)}}
 </style>
 </head>
 <body>
@@ -191,7 +200,7 @@ footer.site a{text-transform:none;letter-spacing:normal;font-size:inherit}
 <ul><li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#trailers">Trailers</a></li><li><a href="#episodes">Episodes</a></li><li><a href="#contact">Contact</a></li></ul>
 </nav>
 <main id="home-view">
-<section class="intro"><div class="orb" aria-hidden="true"><i class="r1"></i><i class="r2"></i><span class="orbit"><b></b></span><span class="orbit rev"><u></u></span></div><p class="eyebrow">A podcast from Transformation Professionals with fabulous guests!</p><h1>Every programme has a <span class="hl">day zero.</span></h1><p class="sub">In-depth analysis of what really happens when organisations try to transform.</p><div class="btns"><a class="btn pri big" href="#season1">&#9654; Watch now</a><span class="meta"><b>Latest Episode:</b> Episode 1 &middot; Tue 1 Dec 2026</span></div></section>
+<section class="intro"><div class="orb" aria-hidden="true"><i class="r1"></i><i class="r2"></i><span class="orbit"><b></b><s></s></span><span class="orbit rev"><u></u></span></div><p class="eyebrow">A podcast from Transformation Professionals with fabulous guests!</p><h1>Every programme has a <span class="hl">day zero.</span></h1><p class="sub">In-depth analysis of what really happens when organisations try to transform.</p><div class="btns"><a class="btn pri big" href="#season1">&#9654; Watch now</a><span class="meta"><b>Latest Episode:</b> Episode 1 &middot; Tue 1 Dec 2026</span></div></section>
   <section class="blk about" id="about"><h2>About the podcast</h2>
 <p>Programme Zero goes back to where every programme starts.</p>
 <p>Each episode follows one programme from the very beginning: the brief, the pressure and the first decisions.</p>
