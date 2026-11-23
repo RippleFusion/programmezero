@@ -272,7 +272,7 @@ show(decodeURIComponent(location.hash.slice(1)));})();
 function set(h){links.forEach(function(a){if(a.getAttribute('href')===h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
 function upd(){var v=(window.PZ&&window.PZ.view)||'home';if(v==='privacy'){set('');return}
 var cur='#top',nb=nav.getBoundingClientRect().bottom;
-['about','trailers','episodes','contact'].forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=nb+40)cur='#'+i});set(cur)}
+var line=Math.max(nb+40,innerHeight*0.4);['about','trailers','episodes','contact'].forEach(function(i){var e=document.getElementById(i);if(e&&e.getBoundingClientRect().top<=line)cur='#'+i});if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='#contact';set(cur)}
 addEventListener('scroll',upd,{passive:true});document.addEventListener('pzroute',function(){setTimeout(upd,60)});addEventListener('resize',upd);upd();})();
 </script>
 <script>
