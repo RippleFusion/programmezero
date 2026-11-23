@@ -196,6 +196,13 @@ section.blk[id],#contact{scroll-margin-top:30px}
 .seasons{align-items:center;gap:.6rem 1rem}.seasons .stitle{font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:300;color:var(--ink);letter-spacing:.01em}
 .hosts{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;gap:3.5rem 3rem;margin:0 auto;align-items:start}@media(max-width:640px){.hosts{grid-template-columns:1fr;gap:3rem}}
 .lede a{color:var(--accent);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}.lede a:hover,.lede a:focus-visible{color:#fff}
+.news{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"txt inp" "btn msg";gap:1.1rem 2rem;align-items:start}
+.news>div{grid-area:txt}
+#nl{display:contents}
+#nl input{grid-area:inp;align-self:start}
+#nl .btn{grid-area:btn;justify-self:start;align-self:start;margin-top:0}
+#nl .note{grid-area:msg;margin:0}
+@media(max-width:700px){.news{grid-template-columns:1fr;grid-template-areas:"txt" "inp" "btn" "msg"}}
 </style>
 </head>
 <body>
